@@ -1,12 +1,9 @@
 <?php
-
-
-require_once __DIR__.'/../vendor/autoload.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
     dirname(__DIR__)
 ))->bootstrap();
-
 date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 
 
@@ -25,6 +22,8 @@ date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
+
+
 
 // $app->withFacades();
 
@@ -79,6 +78,9 @@ $app->middleware([
     Fruitcake\Cors\HandleCors::class,
     App\Http\Middleware\ExampleMiddleware::class
  ]);
+
+
+
 
 // $app->routeMiddleware([
 //     'auth' => App\Http\Middleware\Authenticate::class,

@@ -291,3 +291,8 @@ ALTER TABLE `repartidor`
 ALTER TABLE `seccion_menu`
   ADD CONSTRAINT `fk_seccion_menu_producto` FOREIGN KEY (`Id_producto`) REFERENCES `producto` (`Id`),
   ADD CONSTRAINT `fk_seccion_menu_ingrediente_adicional` FOREIGN KEY (`Id_ingrediente_adicional`) REFERENCES `ingrediente_adicional` (`Id`);
+
+
+
+--insert
+

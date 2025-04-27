@@ -1,5 +1,8 @@
 {
     "require": {
-        "fruitcake/laravel-cors": "*"
+        "fruitcake/laravel-cors": "^3.0",
+
+        "nikic/fast-route": "^1.3"
     }
-}
+  }
+  

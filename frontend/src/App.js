@@ -1,42 +1,24 @@
 import React from 'react';
-import Login from './pages/Login.js'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Menu from './components/Menu';
+import Main from './pages/Productos';
+import Acerca from './pages/Acerca';
+import Contacto from './pages/Contacto';
+import Ubicacion from './pages/Ubicacion';
 
 function App() {
   return (
-    <div>
-      <Login />
-    </div>
+    <Router>
+      <Menu />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/acerca" element={<Acerca />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/ubicacion" element={<Ubicacion />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
-
-
-
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-
-// function App() {
-//   const [productos, setProductos] = useState([]);
-
-//   useEffect(() => {
-//     axios.get('http://localhost:8000/S-FOR-YOU-NUTRITION/productos') // Ajusta la URL a tu endpoint real
-//       .then(response => setProductos(response.data))
-//       .catch(error => console.error('Error al obtener productos:', error));
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1>Lista de Productos</h1>
-//       <ul>
-//         {productos.map(producto => (
-//           <li key={producto.id}>{producto.nombre}</li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 
