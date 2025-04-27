@@ -16,8 +16,12 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-
-
 $router->get('/productos', 'ExampleController@productos');
 
+require_once 'ProductController.php';
+use App\Http\Controllers\ProductController;
+
+$router->post('/productos', [ProductController::class, 'store']);
+
+$router->get('/productos', 'ProductController@index');
 
